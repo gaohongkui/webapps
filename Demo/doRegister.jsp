@@ -2,6 +2,8 @@
 <%@page pageEncoding="UTF-8"%>
 <%@page language="java" import="java.sql.*"%>
 <%@page language="java" import="java.util.*"%>
+<jsp:useBean id="userDAO" class="news.beans.UserDAO" scope="page"></jsp:useBean>
+<<jsp:useBean id="user" class="news.beans.User" scope="page"></jsp:useBean>
 <!DOCTYPE html>
 <!--功能说明：执行提交注册
 	根据注册的结果(后期用数据库判断)，实现智能跳转，注册成功自动登录注册失败则返回首页。
@@ -43,64 +45,20 @@
 <body>
 	<%
 	request.setCharacterEncoding("utf-8");
-	String flag=request.getParameter("flag");
-	String uName=request.getParameter("username");
-	String uPwd=request.getParameter("password");
-	String uGender=request.getParameter("gender");
-	String uResume=request.getParameter("resume");
-	if(uGender.equals("male")){
-					uGender="男";
-				}else if (uGender.equals("female")) {
-				    uGender="女";
-				}else{
-					uGender="保密";
-				}
-	//与数据库交互
-	String dataDirverName = "com.mysql.cj.jdbc.Driver";
-	String url = "jdbc:mysql://localhost:3306/dbnews?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
-//	String username = "root";
-//	String password = "";
-	Connection con = null;
-	
-	try{
-	    Class.forName(dataDirverName);
-	}catch (ClassNotFoundException e) {
-//		out.println(e);
-	    System.err.println(e.getMessage());
-	}
-	
-	int rs=0;
-	try{
-		
-	    con=DriverManager.getConnection(url,"root","");
-	    
-	    //sql处理
-	    String sql="insert into user(username,password,gender,resume) values('"+uName+"','"+uPwd+"','"+uGender+"','"+uResume+"')";
-	    System.out.println(sql);
-		Statement st = con.createStatement();// 准备执行语句
-		rs = st.executeUpdate(sql);// 执行语句，得到结果
-		
-	}catch (SQLException e1) {
-		out.println(e1.getMessage());
-	    System.err.println(e1.getMessage());
-	}finally{
-		con.close();
-	}
-	
-	if (rs==1) {
-		    flag="1";
-	}else {
-		    flag="0";
-	}
+	%>
+	<jsp:setProperty property="*" name="user"/>
+	<% 
+	String flag=String.valueOf(userDAO.addUser(user));
 	
 	String link;
 	if (flag.equals("1")) {
 	    link="index.jsp";
+	    session.setAttribute("username",user.getUsername());
+		session.setAttribute("usertype","0");
 	}else {
 	    link="userLogin.jsp";
 	}
-	session.setAttribute("username",uName);
-	session.setAttribute("usertype","0");
+	
 	%>
 	<div id="main">
 		<h1 id="mesg"><script type="text/javascript">

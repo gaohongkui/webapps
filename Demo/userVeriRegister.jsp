@@ -88,7 +88,6 @@
 					<p><input type="password" id="password" name="password" value="<%=uPwd%>" placeholder="密码"></p>
 					<p><input type="text" id="gender" name="gender" value="<%=uGender%>" /></p>
 					<p><textarea id="resume" name="resume" placeholder="个人简介"><%=uResume%></textarea></p>
-					<input type="text" name="flag" id="flag" value="1" />
 				</div>
 				<p class="submit"><input type="submit" name="commit" value="确认"></p>
 			</form>

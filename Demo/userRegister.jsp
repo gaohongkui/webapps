@@ -79,9 +79,9 @@
 					性别
 				</span>
 					<select id="gender" name="gender">
-						<option value="">保密</option>
-						<option value="male">男</option>
-						<option value="female">女</option>
+						<option value="保密">保密</option>
+						<option value="男">男</option>
+						<option value="女">女</option>
 					</select>
 				</p>
 				<p><textarea id="resume" name="resume" rows="6" cols="34" placeholder="个人简介"></textarea></p>
