@@ -1,0 +1,30 @@
+
+
+
+/*#content1 {
+	width: 440px;
+	margin: 0 auto;
+}*/
+
+h1 {
+	text-align: center;
+}
+
+.right-t {
+	float: right;
+	margin-right: 40px;
+}
+
+.left-t {
+	margin-left: 10px;
+}
+
+#news_content {
+	width: 540px;
+	margin: 0 auto;
+}
+
+p {
+	text-indent: 2em;
+	text-align: justify;
+}

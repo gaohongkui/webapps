@@ -1,0 +1,14 @@
+
+
+#addNewsForm{
+	width: 500px;
+	border: solid 1px;
+	margin: 0 auto;
+	padding: 20px 30px;
+}
+h1{text-align: center;}
+.submitBtn{
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+}

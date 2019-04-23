@@ -1,0 +1,10 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<div id="footer">
+			<!--页脚部分-->
+			<div class="bang">
+				<p>Copyright &copy; 2019.FutureDream.高宏奎 By
+					<a target="_blank" href="http://killeronline.ngrok.xiaomiqiu.cn">杀手不太冷</a>
+				</p>
+			</div>
+		</div>

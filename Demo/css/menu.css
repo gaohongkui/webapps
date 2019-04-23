@@ -1,0 +1,42 @@
+
+
+#menu{
+	margin: 0 auto;
+	padding-top:10px;
+	width: 950px;
+	text-align: center;
+	color: #0000ff;
+	background: #e8f3fb;
+	border-bottom: solid 1px #bfdaf5;
+	height: 30px;
+	clear: both;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#menu #user{
+	float: left;
+	margin: 0 20px;
+}
+#menu #menu-list{
+	float: right;
+	height: 30px;
+	margin: 0 20px;
+}
+
+#menu-list ul{
+	float: left;
+	margin: 0;
+}
+#menu li{
+	display: inline;
+}
+
+#menu li a,#menu #user a{
+	padding: 3px 5px;
+	color: #0000ff;
+}
+#menu li a:hover{
+	color: #ffffff;
+	background: #40b7ed;
+}

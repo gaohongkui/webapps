@@ -1,0 +1,23 @@
+
+
+.news_list h1{
+	text-align: center;
+	margin: 50px;
+}
+.news_list ul li{
+	display: inherit;
+	margin: 10px auto;
+}
+.news_list ul li div{
+	display: inline;
+}
+.dd_lm{
+	float: left;
+}
+.dd_lm{
+	float: inherit;
+}
+.dd_time{
+	float: right;
+	margin-right: 20px;
+}
