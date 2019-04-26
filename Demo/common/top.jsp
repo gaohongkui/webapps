@@ -75,7 +75,7 @@
 			</li>
 			<%}else if(usertype.equals("1")){//管理员%>
 			<li>
-				<a href="listNews.jsp">新闻管理</a>
+				<a href="manageNews.jsp">新闻管理</a>
 			</li>
 			<li>
 				<a href="listComment.jsp">评论管理</a>

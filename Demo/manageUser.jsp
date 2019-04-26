@@ -3,7 +3,6 @@
 <%@page language="java" import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>新闻发布系统v3.0 By杀手不太冷</title>
