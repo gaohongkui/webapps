@@ -2,7 +2,7 @@ h1 {
 	text-align: center;
 }
 
-table {
+.tableA {
 	margin: 0 auto;
 	width: 550px;
 	text-align: center;
@@ -15,7 +15,7 @@ table {
 	overflow-y: auto;
 }
 
-table th {
+.tableA th {
 	background: #b5cfd2 url('cell-blue.jpg');
 	border-width: 1px;
 	padding: 8px;
@@ -23,7 +23,7 @@ table th {
 	border-color: #999999;
 }
 
-table td {
+.tableA td {
 	background: #dcddc0 url('cell-grey.jpg');
 	border-width: 1px;
 	padding: 8px;
@@ -32,20 +32,20 @@ table td {
 	
 }
 
-table tbody {
+.tableA tbody {
 	display: block;
 	height: 540px;
 	overflow-y: auto;
 	overflow-x:hidden;
 }
 
-table thead, tbody tr {
-	display: table;
+.tableA thead, tbody tr {
+	display: .tableA;
 	width: 100%;
-	table-layout: fixed;
+	.tableA-layout: fixed;
 }
 
-table thead {
+.tableA thead {
 	width: calc(100% - 1em)
 }
 

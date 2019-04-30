@@ -3,6 +3,7 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page language="java" import="java.sql.*"%>
+<%@ taglib uri="/tld/extremecomponents" prefix="ec" %>
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/fengche.css" />
 <link rel="stylesheet" type="text/css" href="css/managerUser.css?version=<%=System.currentTimeMillis()%>" />
+<link href="<%=request.getContextPath() %>/css/extremecomponents.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -57,7 +59,8 @@
 			<!--主体部分右栏-->
 			<jsp:useBean id="newsDAO" class="newsPub.beans.NewsDAO" scope="page"></jsp:useBean>
 			<%
-				ArrayList<News> newList = newsDAO.getAllNews();
+				ArrayList<News> newsList = newsDAO.getAllNews();
+				request.setAttribute("newsList", newsList);
 			%>
 			<div>
 				<h1>新闻管理</h1>
@@ -65,58 +68,16 @@
 					<a href="addNews.jsp">发布新闻</a>
 				</span>
 			</div>
-			<div class="table">
-			<ec:table items="USERINFO" var="row"
-    action="authuser?ActionType=authuser_SelectInit"
-    view="html" 
-    autoIncludeParameters="false"
-     >
-    
-    <ec:exportXls fileName="userList.xls" />
-    <ec:row>
-        <ec:column style="text-align:center;" width="7%" property="rowcount" cell="rowCount" title="序号" sortable="false"/>
-        <ec:column property="logName" style="text-align:center;" title="账号" />
-        <ec:column property="employName" style="text-align:center;" title="人员姓名" />
-        <ec:column property="createDate" style="text-align:center;" title="创建时间" />
-        <ec:column property="creator" style="text-align:center;" title="创建人" />
-    </ec:row>
-</ec:table>
-
-				<table class="tableA" border="1">
-					<thead>
-						<tr>
-							<th>序号</th>
-							<th>新闻标题</th>
-							<th>发布时间</th>
-							<th>修改</th>
-							<th>删除</th>
-						</tr>
-					</thead>
-					<tbody>
-					<%
-						News news = null;
-						for (int i = 0; i < newList.size(); ++i) {
-							news = newList.get(i);
-					%>
-						<tr>
-							<td><%=i + 1%></td>
-							<td>
-								<a href="dispNews.jsp?id=<%=news.getId()%>"> <%=news.getTitle()%></a></td>
-							<td><%=news.getPubtime()%></td>
-							<td>
-								<a href="modiNews.jsp?id=<%=news.getId()%>"><img src="images/edit.png" alt="修改" /></a>
-								
-							</td>
-							<td>
-								<a href="deleteNews.jsp?id=<%=news.getId()%>"><img src="images/deleteuser.png" alt="删除" /></a>
-								
-							</td>
-						</tr>
-						<%
-							}
-						%>
-					</tbody>
-				</table>
+			<ec:table var="news" items="newsList" action="index.jsp">
+			<ec:row>
+			<ec:column style="text-align:center;" cell="rowCount" property="id" title="序号"/>
+			<ec:column style="text-align:center;" property="title" title="标题"/>
+			<ec:column style="text-align:center;" property="pubtime" title="发布时间"/>
+			<ec:column style="text-align:center;" title="修改" property="null"> <a href="modiNews.jsp?id=${news.id }"><img src="images/edit.png" alt="修改" /></a></ec:column>
+			<ec:column style="text-align:center;" title="删除" property="null"> <a href="deleteNews.jsp?id=${news.id}" onclick="return confirm('确定删除吗?')" ><img src="images/deleteuser.png" alt="删除" /></a></ec:column>
+			</ec:row>
+			</ec:table>
+				
 
 			</div>
 

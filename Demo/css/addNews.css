@@ -7,8 +7,7 @@
 	padding: 20px 30px;
 }
 h1{text-align: center;}
-.submitBtn{
-	display: block;
-	margin: 0 auto;
+.returnBtn,.submitBtn{
+	margin-left:50px;
 	cursor: pointer;
 }

@@ -51,7 +51,7 @@
 		}else {
 		    out.println("用户删除失败！请联系管理员");
 		}
-		out.println("单击<a href='index.jsp'>回到首页</a>");
+		out.println("单击<a href='manageNews.jsp'>返回上一页</a>");
 	}catch (SQLException e1) {
 //		out.println(e1.getMessage());
 	    System.err.println(e1.getMessage());

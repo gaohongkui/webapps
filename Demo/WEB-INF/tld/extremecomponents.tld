@@ -457,15 +457,6 @@
       <description><![CDATA[The container which holds all the main table information. Will also hold global information if needed. The table tag is copied into the Table and encapsulated in the Model.]]></description>
 
       <attribute>
-         <name>rowsTotal</name>
-         <required>false</required>
-         <rtexprvalue>true</rtexprvalue>
-
-           <description><![CDATA[Compute row total,add by lichengzhi.]]></description>
-
-      </attribute>
-
-      <attribute>
          <name>action</name>
          <required>false</required>
          <rtexprvalue>true</rtexprvalue>
