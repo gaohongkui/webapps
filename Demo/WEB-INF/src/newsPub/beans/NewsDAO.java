@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import news.beans.DataBaseAccess;
 
@@ -47,7 +49,7 @@ public class NewsDAO {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
 		news.setPubtime(df.format(new Date()));
 		DataBaseAccess dba = new DataBaseAccess();
-		String sql = "insert into news(title,content,author,pubtime,keyword,newtype)" + "values('" + news.getTitle()
+		String sql = "insert into news(title,content,author,pubtime,keyword,newstype)" + "values('" + news.getTitle()
 				+ "','" + news.getContent() + "','" + news.getAuthor() + "','" + news.getPubtime() + "','"
 				+ news.getKeyword() + "'," + news.getNewstype() + ")";
 		try {
@@ -88,4 +90,58 @@ public class NewsDAO {
 		return news;
 	}
 
+	public void increaseAc(String id) {
+		DataBaseAccess dba = new DataBaseAccess();
+		String sql = "update news set acnumber=acnumber+1 where id=" + id;
+		try {
+			dba.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public boolean deleteNews(String id) {
+		DataBaseAccess dba = new DataBaseAccess();
+		String sql = "delete from news where id =" + id;
+		try {
+			int rs = dba.executeUpdate(sql);
+			if (rs > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean modiNews(News news) {
+		DataBaseAccess dba = new DataBaseAccess();
+		String sql = "update news set title='" + news.getTitle() + "',newstype='" + news.getNewstype() + "',keyword='"
+				+ news.getKeyword() + "',content='" + news.getContent() + "' where id =" + news.getId();
+		try {
+			int rs = dba.executeUpdate(sql);
+			if (rs > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public List<Map<String, String>> getAllNewstype() {
+		List<Map<String, String>> list = new ArrayList<>();
+		DataBaseAccess dba = new DataBaseAccess();
+		String sql = "select * from newstype";
+		try {
+			list = dba.getMultiRecord(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

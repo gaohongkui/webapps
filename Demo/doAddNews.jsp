@@ -15,9 +15,9 @@
 <script type="text/javascript">
 	function process(msg) {
 		if (alert(msg)) {
-			window.history.go(-1);
-		} else {
-			window.history.go(-1);
+			window.location.href = 'index.jsp';
+		}else {
+			window.location.href = 'index.jsp';
 		}
 	}
 </script>
@@ -26,15 +26,15 @@
 <body>
 	<%
 		request.setCharacterEncoding("utf-8");
-		String id = request.getParameter("id");
 	%>
+
 	<jsp:setProperty property="*" name="news" />
 	<%
-		Boolean rs = newsDao.modiNews(news);
+		Boolean rs = newsDao.insert(news);
 		if (rs) {
-			out.println("<script>process('----新闻修改成功！');</script>");
+			out.println("<script>process('----新闻添加成功！');</script>");
 		} else {
-			out.println("<script>process('----新闻修改失败！\n请联系管理员');</script>");
+			out.println("<script>process('----新闻添加失败！\n请联系管理员');</script>");
 		}
 	%>
 

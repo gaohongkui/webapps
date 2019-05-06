@@ -29,23 +29,4 @@ h1 {
 	padding: 8px;
 	border-style: solid;
 	border-color: #999999;
-	
 }
-
-.tableA tbody {
-	display: block;
-	height: 540px;
-	overflow-y: auto;
-	overflow-x:hidden;
-}
-
-.tableA thead, tbody tr {
-	display: .tableA;
-	width: 100%;
-	.tableA-layout: fixed;
-}
-
-.tableA thead {
-	width: calc(100% - 1em)
-}
-

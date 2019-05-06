@@ -64,14 +64,15 @@
 			%>
 			<div>
 				<h1>新闻管理</h1>
-				<span style="margin-left: 450px">
-					<a href="addNews.jsp">发布新闻</a>
+				<span style="position:relative;left:15px;">
+					<a href="addNews.jsp"><img width="15%" alt="发布新闻" src="images/发布新闻.png"></a>
 				</span>
+				
 			</div>
-			<ec:table var="news" items="newsList" action="index.jsp">
+			<ec:table var="news" items="newsList" action="index.jsp" style="font-size:20px;">
 			<ec:row>
 			<ec:column style="text-align:center;" cell="rowCount" property="id" title="序号"/>
-			<ec:column style="text-align:center;" property="title" title="标题"/>
+			<ec:column style="text-align:center;" property="title" title="标题" ><a href="dispNews.jsp?id=${news.id }">${news.title}</a></ec:column>
 			<ec:column style="text-align:center;" property="pubtime" title="发布时间"/>
 			<ec:column style="text-align:center;" title="修改" property="null"> <a href="modiNews.jsp?id=${news.id }"><img src="images/edit.png" alt="修改" /></a></ec:column>
 			<ec:column style="text-align:center;" title="删除" property="null"> <a href="deleteNews.jsp?id=${news.id}" onclick="return confirm('确定删除吗?')" ><img src="images/deleteuser.png" alt="删除" /></a></ec:column>

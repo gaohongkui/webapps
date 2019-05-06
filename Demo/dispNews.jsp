@@ -1,4 +1,5 @@
 <%@page contentType="text/html"%>
+<%@page import="newsPub.beans.News" %>
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css?version=<%=System.currentTimeMillis()%>" />
 		<link rel="stylesheet" type="text/css" href="css/fengche.css"/>
 		<link rel="stylesheet" type="text/css" href="css/dispNews.css?version=<%=System.currentTimeMillis()%>" />
+		<jsp:useBean id="newDao" class="newsPub.beans.NewsDAO"></jsp:useBean>
 	</head>
 
 	<body>
@@ -37,23 +39,24 @@
 				<jsp:include page="common/left.jsp"></jsp:include>
 			</div>
 			<div id="main">
+			<%
+				String id=request.getParameter("id");
+				newDao.increaseAc(id);
+				News news=newDao.getByID(id);
+				request.setAttribute("news", news);
+			%>
 				<!--主体部分右栏-->
-				<h1>智慧城市计划投资规模超万亿</h1>
+				<h1>${news.title}</h1>
 			<div class="news_time">
-				<span class="left-t">2019-03-04 20:05:23</span>
-				<span class="right-t">(点击：16)
+				<span class="left-t">${news.pubtime}</span>
+				<span class="right-t">(点击：${news.acnumber})
 					<img src="images/12.png" alt="">
 					<a href="#">查看评论</a>
 				</span>
 			</div>
 			<hr style="border:1px dotted #036" />
 			<div id="news_content">
-				<p>这里是内容这里是内容这里是内容
-					这里是内容这里是内容这里是内容这里是内容这里是内容
-					这里是内容这里是内容这里是内容?这里是内容这里是内容
-					这里是内容这里是内容,这里是内容这里是内容这里是内容
-					这里是内容这里是内容这里是内容这里是内容这里是内容
-					这里是内容这里是内容这里是内容这里是内容
+				<p>${news.content}
 				</p>
 				<p>这里是内容这里是内容这里是内容
 					这里是内容这里是内容这里是内容这里是内容这里是内容
