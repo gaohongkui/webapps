@@ -11,12 +11,14 @@
 <link rel="shortcut icon" href="images/bitbug_favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/public.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/main.css?version=<%=System.currentTimeMillis()%>" />
-<link rel="stylesheet" type="text/css" href="css/fengche.css" />
+<link rel="stylesheet" type="text/css" href="css/fengche.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/addNews.css?version=<%=System.currentTimeMillis()%>" />
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <jsp:useBean id="newsDao" class="newsPub.beans.NewsDAO"></jsp:useBean>
 </head>
 
 <body>
+	
 	<jsp:include page="checkValid.jsp"></jsp:include>
 	<jsp:include page="common/top.jsp"></jsp:include>
 	<!--风车动画-->
@@ -76,12 +78,16 @@
 				<br>
 				<br>
 				内容：
-				<textarea name="content" cols="50" rows="5"></textarea>
 				<br />
 				<br />
-				<img class="returnBtn" src="images/返回.png" onclick="javascript:history.go(-1)" />
-				<img class="submitBtn" src="images/提交.png" onclick="javascript:document.addNewsForm.submit()" />
+				<textarea class="ckeditor" name="content" cols="100" rows="50"></textarea>
+				<br />
+				<br />
 			</form>
+			<div class="btn">
+					<img class="returnBtn" src="images/返回.png" onclick="javascript:history.go(-1)" />
+					<img class="submitBtn" src="images/提交.png" onclick="javascript:document.addNewsForm.submit()" />
+				</div>
 		</div>
 		<div class="blank20"></div>
 		<div class="blank10"></div>

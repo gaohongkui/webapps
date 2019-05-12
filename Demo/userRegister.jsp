@@ -35,7 +35,7 @@
 									$("#showResult").text("正在查询...");   
 								},
 								success: function(data) {
-									data=data.replace(/(^\s*)|(\s*$)/g, "");//去除左右字符串
+									//data=data.replace(/(^\s*)|(\s*$)/g, "");//去除左右字符串
 									if(data=="true") {
 									$("#showResult").css("color", "green");
 									$("#showResult").text("该用户名未被注册");

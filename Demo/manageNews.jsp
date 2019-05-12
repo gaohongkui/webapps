@@ -13,7 +13,7 @@
 <link rel="shortcut icon" href="images/bitbug_favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/public.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/main.css?version=<%=System.currentTimeMillis()%>" />
-<link rel="stylesheet" type="text/css" href="css/fengche.css" />
+<link rel="stylesheet" type="text/css" href="css/fengche.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/managerUser.css?version=<%=System.currentTimeMillis()%>" />
 <link href="<%=request.getContextPath() %>/css/extremecomponents.css" rel="stylesheet" type="text/css" />
 </head>

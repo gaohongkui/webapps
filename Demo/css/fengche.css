@@ -1,4 +1,4 @@
-.lanren { -webkit-transition: All 1s 0s; -moz-transition: All 1s 0s; -ms-transition: All 1s 0s; margin-left: 150px;margin-top: 150px; }
+.lanren { -webkit-transition: All 1s 0s; -moz-transition: All 1s 0s; -ms-transition: All 1s 0s; margin-left: 150px;margin-top: 150px;position: relative;z-index: -99; }
 .lanren ul { margin: 0; padding: 0;-webkit-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -moz-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -ms-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); }
 .lanren ul li { list-style: none; position: absolute; width: 530px; height: 530px; left: 45%; top: 100%; margin-left: -200px; margin-top: -100px; }
 .lanren li img { -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; transform-style: preserve-3d; }
@@ -15,7 +15,7 @@
 	to { -webkit-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1); -moz-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1); -ms-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1); transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1); }
 }
 
-.lanren2 { -webkit-transition: All 1s 0s; -moz-transition: All 1s 0s; -ms-transition: All 1s 0s; margin-right: 280px;margin-top: 150px; }
+.lanren2 { -webkit-transition: All 1s 0s; -moz-transition: All 1s 0s; -ms-transition: All 1s 0s; margin-right: 280px;margin-top: 150px; position: relative;z-index: -99;}
 .lanren2 ul { margin: 0; padding: 0;-webkit-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -moz-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -ms-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); }
 .lanren2 ul li { list-style: none; position: absolute; width: 530px; height: 530px; left: 45%; top: 100%; margin-left: -200px; margin-top: -100px; }
 .lanren2 li img { -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; transform-style: preserve-3d; }

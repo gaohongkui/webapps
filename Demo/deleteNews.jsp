@@ -10,9 +10,9 @@
 <script type="text/javascript">
 	function process(msg) {
 		if (alert(msg)) {
-			window.history.back(-1);
+			window.location.href = 'manageNews.jsp';
 		}else {
-			window.history.back(-1);
+			window.location.href = 'manageNews.jsp';
 		}
 	}
 </script>

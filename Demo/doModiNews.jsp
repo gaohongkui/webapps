@@ -15,9 +15,9 @@
 <script type="text/javascript">
 	function process(msg) {
 		if (alert(msg)) {
-			window.history.go(-1);
+			window.location.href = 'manageNews.jsp';
 		} else {
-			window.history.go(-1);
+			window.location.href = 'manageNews.jsp';
 		}
 	}
 </script>

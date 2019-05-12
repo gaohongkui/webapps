@@ -28,3 +28,14 @@ p {
 	text-indent: 2em;
 	text-align: justify;
 }
+
+.btn{
+	position:absolute;
+	width:640px;
+	bottom:2px;
+}
+.returnBtn{
+	float:right;
+	margin-right:50px;
+	cursor: pointer;
+}

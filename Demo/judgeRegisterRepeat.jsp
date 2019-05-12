@@ -35,6 +35,7 @@
 		}else {
 			response.getWriter().print(true);
 		}
+		response.getWriter().close();//关闭输出流，否则会返回多余的信息
 		rs.close();
 		
 	}catch (SQLException e1) {

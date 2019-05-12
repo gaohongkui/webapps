@@ -12,12 +12,15 @@
 <link rel="shortcut icon" href="images/bitbug_favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/public.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/main.css?version=<%=System.currentTimeMillis()%>" />
-<link rel="stylesheet" type="text/css" href="css/fengche.css" />
+<link rel="stylesheet" type="text/css" href="css/fengche.css?version=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="css/addNews.css?version=<%=System.currentTimeMillis()%>" />
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 </head>
 
 <body>
+	<!--权限控制-->
+	<jsp:include page="checkValid.jsp"></jsp:include>
 	<jsp:include page="common/top.jsp"></jsp:include>
 	<!--风车动画-->
 	<div class="lanren" style="float: left;">
@@ -87,13 +90,16 @@
 				<br>
 				<br>
 				内容：
-				<textarea name="content" cols="50" rows="10"><%=news.getContent()%></textarea>
 				<br />
 				<br />
+				<textarea class="ckeditor" name="content" cols="50" rows="10"><%=news.getContent()%></textarea>
+				<br />
+				<br />
+			</form>
+			<div class="btn">
 				<img class="returnBtn" src="images/返回.png" onclick="javascript:history.go(-1)" />
 				<img class="submitBtn" src="images/提交.png" onclick="javascript:document.modiNewsForm.submit()" />
-
-			</form>
+			</div>
 		</div>
 		<div class="blank20"></div>
 		<div class="blank10"></div>
