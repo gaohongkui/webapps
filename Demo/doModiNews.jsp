@@ -2,6 +2,7 @@
 <%@page pageEncoding="UTF-8"%>
 <%@page language="java" import="java.sql.*"%>
 <%@page language="java" import="java.util.*"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:useBean id="newsDao" class="newsPub.beans.NewsDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="news" class="newsPub.beans.News" scope="page"></jsp:useBean>
 <!DOCTYPE html>
@@ -31,12 +32,20 @@
 	<jsp:setProperty property="*" name="news" />
 	<%
 		Boolean rs = newsDao.modiNews(news);
-		if (rs) {
-			out.println("<script>process('----新闻修改成功！');</script>");
-		} else {
-			out.println("<script>process('----新闻修改失败！\n请联系管理员');</script>");
-		}
+		request.setAttribute("flag", rs);
 	%>
+	<c:choose>
+		<c:if test="${flag }">
+			<script>
+				process('----新闻修改成功！');
+			</script>
+		</c:if>
+		<c:otherwise>
+			<script>
+				process('----新闻修改失败！\n请联系管理员');
+			</script>
+		</c:otherwise>
+	</c:choose>
 
 </body>
 

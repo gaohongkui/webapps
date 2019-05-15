@@ -67,9 +67,8 @@
 				<span style="position:relative;left:15px;">
 					<a href="addNews.jsp"><img width="15%" alt="发布新闻" src="images/发布新闻.png"></a>
 				</span>
-				
 			</div>
-			<ec:table var="news" items="newsList" action="index.jsp" style="font-size:20px;">
+			<ec:table var="news" items="newsList" action="TableServlet"  style="font-size:20px;">
 			<ec:row>
 			<ec:column style="text-align:center;" cell="rowCount" property="id" title="序号"/>
 			<ec:column style="text-align:center;" property="title" title="标题" ><a href="dispNews.jsp?id=${news.id }">${news.title}</a></ec:column>
@@ -86,7 +85,6 @@
 		</div>
 		<div class="blank20"></div>
 		<div class="blank10"></div>
-	</div>
 	<%@include file="common/bottom.txt"%>
 </body>
 
