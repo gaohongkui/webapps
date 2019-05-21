@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.sun.org.apache.xpath.internal.operations.And;
+
 import news.beans.DataBaseAccess;
 
 public class NewsDAO {
@@ -143,5 +145,33 @@ public class NewsDAO {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	public ArrayList<News> getByKeyword(String keyword) {
+		News news = null;
+		ArrayList<News> newsList = new ArrayList<News>();
+		DataBaseAccess dba = new DataBaseAccess();
+		String sql = "select *,newstype.newstype as type from news,newstype where keyword like '%" + keyword + "%' and new.newstype=newstype.id";
+		Connection connection;
+		try {
+			connection = dba.getConnection();
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				news = new News();
+				news.setId(rs.getInt("id"));
+				news.setTitle(rs.getString("title"));
+				news.setPubtime(rs.getString("pubtime"));
+				news.setKeyword(rs.getString("keyword"));
+				news.setType(rs.getString("type"));
+				newsList.add(news);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			dba.close();
+		}
+		return newsList;
 	}
 }
